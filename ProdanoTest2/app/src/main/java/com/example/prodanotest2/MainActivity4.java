@@ -220,23 +220,28 @@ ArrayList<Dimaspas> zbrosCard;
     private void stadia2(Integer num){
         zbrosCard.add(new Dimaspas(i+1,num, bds.get(i).getName()));
         i++;
+        Log.d("zaeb", String.valueOf(i));
         if(i==maxPlayer){
             Log.d("logf", "stadia2");
             oneshod=true;
             i=0;
             i1++;
             endRoz();
-        }else{
+        }else {
             stadia1();
         }
-        if(i1==30/maxPlayer){
-            Intent intent = new Intent(MainActivity4.this,Finishst.class);
-            startActivity(intent);
-        }
+
+
 
     }
 
     private void endRoz(){
+        Log.d("zaeb", "endroz");
+        if(i1==30/maxPlayer) {
+            Intent intent = new Intent(MainActivity4.this, Finishst.class);
+            startActivity(intent);
+            return;
+        }
         st1.setVisibility(View.GONE);
         st2.setVisibility(View.VISIBLE);
         zbrosCard=sort(zbrosCard);

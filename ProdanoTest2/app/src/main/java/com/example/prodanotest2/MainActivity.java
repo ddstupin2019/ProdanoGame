@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -43,8 +44,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.set:
-                intent = new Intent(MainActivity.this,MainActivity5.class);
-                startActivity(intent);
+                Toast.makeText(this, "В разработке", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.button2:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.mosigra.ru/prodano/rules/"));

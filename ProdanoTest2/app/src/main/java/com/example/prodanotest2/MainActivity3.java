@@ -108,10 +108,6 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
                 }catch (Exception e){
                     Toast.makeText(this, "Некорректные данные", Toast.LENGTH_SHORT).show();
                 }
-                Log.d("bol", "myst "+mystavka);
-                Log.d("bol", "mybl "+mybalance);
-                Log.d("bol", "mydadst "+mydadstavka);
-                Log.d("bol", "backst "+backplayerstavka);
                 if(mydadstavka<mystavka && mybalance-(mystavka-mydadstavka)>=0 && mystavka>backplayerstavka){
                     mybalance-=(mystavka-mydadstavka);
                     st=true;
@@ -332,8 +328,9 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         } else {
             backplayerstavka = mystavka;
         }
-        MainActivity2.database.ubdate(play, i + 1);
         i++;
+        MainActivity2.database.ubdate(play, i);
+
         if (i == maxPlayer) {
             oneCrug = false;
             i = 0;
@@ -358,9 +355,10 @@ public class MainActivity3 extends AppCompatActivity implements View.OnClickList
         if (i1 == 30 / maxPlayer) {
             Intent intent = new Intent(MainActivity3.this, MainActivity4.class);
             startActivity(intent);
-        }else{
-            stadia1();
+            return;
         }
+            stadia1();
+
 
     }
 

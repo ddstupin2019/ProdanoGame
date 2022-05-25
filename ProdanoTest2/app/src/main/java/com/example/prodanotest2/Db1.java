@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 public class Db1 {
     private static String DATABASE_NAME = "simple.db";
     private static String TABLE_NAME = "Prodano";
-    private static int DATABASE_VERSION = 120;
+    private static int DATABASE_VERSION = 132;
 
     private String COLUMN_ID = "_id";
     private String COLUMN_playname = "play1name";
